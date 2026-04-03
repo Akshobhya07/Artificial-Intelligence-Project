@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Test Case Generator</title>
+    <!-- Modern Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <span class="gradient-text">AI</span> TestGen.
+            </div>
+            <p class="subtitle">Automated UI Validation using Expert Systems</p>
+        </header>
+
+        <main class="split-view">
+            <!-- Left Pane: Input -->
+            <div class="pane input-pane glass-panel">
+                <div class="pane-header">
+                    <h2>Feature Requirements</h2>
+                    <span class="status-badge" id="elementCount">Ready</span>
+                </div>
+                <div style="padding: 1.5rem; flex: 1; display: flex; flex-direction: column;">
+                    <label for="textInput" style="display:block; margin-bottom: 0.5rem; color: var(--text-secondary);">Enter Requirement Statement:</label>
+                    <textarea id="textInput" placeholder="e.g. User should be able to authenticate with email and password." 
+                           style="width: 100%; flex: 1; min-height: 150px; padding: 1rem; border-radius: 0.5rem; border: none; background: rgba(0,0,0,0.2); color: white; outline: none; font-family: var(--font-mono); resize: none;"></textarea>
+                </div>
+                <div class="pane-footer">
+                    <button id="generateBtn" class="btn primary-btn">
+                        <span class="icon">✨</span> Generate Tests
+                    </button>
+                    <div id="loadingIndicator" class="hidden">
+                        <div class="spinner"></div>
+                        <span>Evaluating...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Pane: Output -->
+            <div class="pane output-pane glass-panel">
+                <div class="pane-header">
+                    <h2>Test Scenarios & Boilerplate</h2>
+                    <button class="btn secondary-btn px-sm" id="copyBtn" aria-label="Copy code">📋 Copy</button>
+                </div>
+                <div class="code-container">
+                    <pre><code id="outputCode"># Your generated Python + Selenium tests will appear here</code></pre>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/static/script.js"></script>
+</body>
+</html>
